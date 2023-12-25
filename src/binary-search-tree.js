@@ -58,6 +58,46 @@ class BinarySearchTree {
       return this._hasNode(node.right, data);
     }
   }
+
+  find(data) {
+    return this._findNode(this.rootNode, data);
+  }
+
+  _findNode(node, data) {
+    if (!node) {
+      return false;
+    }
+
+    if (data === node.data) {
+      return true;
+    } else if (data < node.data) {
+      return this._findNode(node.left, data);
+    } else {
+      return this._findNode(node.right, data);
+    }
+  }
+  remove(data) {
+    this.rootNode = this._removeNode(this.rootNode, data);
+  }
+
+  _removeNode(node, data) {
+    return node;
+  }
+  min() {
+    return this._minNode(this.rootNode);
+  }
+
+  max() {
+    return this._maxNode(this.rootNode);
+  }
+
+  _minNode(node) {
+    return null;
+  }
+
+  _maxNode(node) {
+    return null;
+  }
 }
 
 module.exports = {
